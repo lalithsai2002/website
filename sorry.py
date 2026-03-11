@@ -22,7 +22,7 @@ import os
 import sys
 import mimetypes
 
-PORT = 8080
+PORT = int(os.environ.get("PORT", 8080))
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR    = os.path.join(SCRIPT_DIR, "src")
 
@@ -394,4 +394,5 @@ if __name__ == "__main__":
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
+
             print("\n  💕  Server stopped. Good luck! 🌸\n")
